@@ -37,11 +37,11 @@ h1 {
 
 #songs-placement {
   margin: auto;
-  width: 80%;
+  width: 75%;
+  max-height: 80%;
   border: 4px dotted darkblue;
   margin: 1em auto;
   background-color: var(--lightbackground);
-
 }
 
 ul {
