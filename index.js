@@ -1,5 +1,5 @@
 
-const api = {
+const data = {
   id: 6,
   authorPlaylist: {
     author: "Dakota Martinez",
@@ -79,10 +79,12 @@ Note: I left my console.logs to show how I checked on various steps before conti
 Iterate through the playlist above and put each song in an individual li that will be a child of the ul with the id="songs". It should have a class of song. 
 
 What li should look like:         
-<li class="song">Sing Sing Sing by Benny Goodman</li> */
-const apiPlayList = api.authorPlaylist.playList
+<li class="song">Sing Sing Sing by Benny Goodman</li> 
+*/
 
-apiPlayList.forEach(song => {
+const dataPlayList = data.authorPlaylist.playList
+
+dataPlayList.forEach(song => {
   const ul = document.querySelector('#songs')
   const li = document.createElement('li')
   li.classList.add('song')
@@ -93,13 +95,16 @@ apiPlayList.forEach(song => {
   ul.appendChild(li)
 })
 
-//PART 2
-//color each song a different color when button with id: song-colorbutton is clicked
+/*
+PART 2
+color each song a different color when button with id: song-colorbutton is clicked
 
-//The requirement is a litte vague. My solution assumes the colors in the array length will match the number of songs
-//in the playerList object above.  You may have other solutions to than this, but I did want to give an example of using a for loop to change properties in a node list.
+The requirement is a litte vague. My solution assumes the colors in the array length will match the number of songs
+in the playerList object above.  You may have other solutions to than this, but I did want to give an example of using a for loop to change properties in a node list.
 
-//Instead of an anonymous arrow function, I wrote a named function declaration that will be passed inot the event listener as a callback.  This is a preference option.  You can write your callback function in any way that is clear to you.
+Instead of an anonymous arrow function, I wrote a named function declaration that will be passed inot the event listener as a callback.  This is a preference option.  You can write your callback function in any way that is clear to you.
+*/
+
 function colorSongs() {
   colors = ['#8B008B', '#9400D3', '#FF1493', 'DodgerBlue', 'Indigo', 'LawnGreen', 'Green', 'FireBrick']
 
@@ -119,12 +124,14 @@ function colorSongs() {
 const colorButton = document.getElementById('song-colorbutton')
 colorButton.addEventListener("click", colorSongs)
 
-//PART 3: Challenge
-//When #song-duration button is clicked, add the following paragraph element after the div with the id songs-placement: <p id="duration">Duration of PlayList: ${durationTotal} seconds</p>
+/* PART 3: Challenge
+When #song-duration button is clicked, add the following paragraph element after the div with the id songs-placement: <p id="duration">Duration of PlayList: ${durationTotal} seconds</p>
+*/
+
 const durationButton = document.getElementById('song-duration')
 durationButton.addEventListener('click', () => {
   //get the duration value in seconds
-  const durationTotal = apiPlayList.reduce((total, song) => {
+  const durationTotal = dataPlayList.reduce((total, song) => {
     return song.duration + total
   }, 0)
 
