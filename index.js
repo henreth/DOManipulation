@@ -95,6 +95,7 @@ dataPlayList.forEach(song => {
   ul.appendChild(li)
 })
 
+
 /*
 PART 2
 color each song a different color when button with id: song-colorbutton is clicked
@@ -150,5 +151,4 @@ durationButton.addEventListener('click', () => {
 
   durationButton.remove()
 })
-
 
